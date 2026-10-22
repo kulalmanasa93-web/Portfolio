@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Manasa Kulal — Official Resume</title>
+  <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <style>
+    :root {
+      --primary: #7C3AED;
+      --primary-light: #9333EA;
+      --accent: #EC4899;
+      --text-main: #0F172A;
+      --text-muted: #475569;
+      --bg-page: #F1F5F9;
+      --bg-card: #FFFFFF;
+      --border-color: #E2E8F0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.5;
+      padding: 2.5rem 1rem;
+    }
+
+    .toolbar {
+      max-width: 860px;
+      margin: 0 auto 1.5rem auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.65rem 1.25rem;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 0.9rem;
+      text-decoration: none;
+      transition: all 0.25s ease;
+      cursor: pointer;
+      border: none;
+    }
+
+    .btn-back {
+      background: #FFFFFF;
+      color: #1E293B;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    .btn-back:hover {
+      background: #F8FAFC;
+      color: var(--primary);
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #7C3AED, #EC4899);
+      color: #FFFFFF;
+      box-shadow: 0 4px 12px rgba(124, 58, 237, 0.25);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(124, 58, 237, 0.35);
+    }
+
+    .resume-wrapper {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      border: 1px solid var(--border-color);
+      overflow: hidden;
+      padding: 3rem;
+    }
+
+    .header-section {
+      border-bottom: 2px solid #F1F5F9;
+      padding-bottom: 1.75rem;
+      margin-bottom: 2rem;
+    }
+
+    .header-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .name-title h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.25rem;
+      font-weight: 800;
+      color: #0F172A;
+      letter-spacing: -0.02em;
+      margin-bottom: 0.35rem;
+    }
+
+    .name-title .role {
+      font-size: 1.05rem;
+      color: var(--primary);
+      font-weight: 600;
+    }
+
+    .contact-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem 1.5rem;
+      margin-top: 1.25rem;
+      padding-top: 1.25rem;
+      border-top: 1px dashed var(--border-color);
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .contact-item i {
+      color: var(--primary);
+      font-size: 0.95rem;
+    }
+
+    .contact-item a {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-item a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+
+    .section-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #0F172A;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      margin-top: 2rem;
+      margin-bottom: 1rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1.5px solid #E2E8F0;
+    }
+
+    .section-title i {
+      color: var(--primary);
+    }
+
+    .edu-item, .project-item {
+      margin-bottom: 1.4rem;
+    }
+
+    .item-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .item-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1E293B;
+    }
+
+    .item-badge {
+      font-size: 0.82rem;
+      font-family: 'Fira Code', monospace;
+      color: var(--primary);
+      background: #F3E8FF;
+      padding: 0.2rem 0.6rem;
+      border-radius: 6px;
+      font-weight: 600;
+    }
+
+    .item-subtitle {
+      font-size: 0.92rem;
+      color: #64748B;
+      font-weight: 500;
+      margin-bottom: 0.4rem;
+    }
+
+    .item-description {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-left: 1.25rem;
+    }
+
+    .item-description li {
+      margin-bottom: 0.35rem;
+    }
+
+    .skills-category {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 0.75rem;
+      padding: 0.5rem 0;
+      font-size: 0.92rem;
+      border-bottom: 1px solid #F1F5F9;
+    }
+
+    .skills-category:last-child {
+      border-bottom: none;
+    }
+
+    .skills-label {
+      font-weight: 700;
+      color: #1E293B;
+    }
+
+    .skills-list {
+      color: var(--text-muted);
+    }
+
+    .cert-item {
+      padding: 0.75rem 1rem;
+      background: #F8FAFC;
+      border-left: 4px solid var(--primary);
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 0.75rem;
+    }
+
+    .cert-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0F172A;
+    }
+
+    .cert-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-top: 0.2rem;
+    }
+
+    @media print {
+      body {
+        background: #FFFFFF;
+        padding: 0;
+        font-size: 10pt;
+      }
+      .toolbar {
+        display: none !important;
+      }
+      .resume-wrapper {
+        border: none;
+        box-shadow: none;
+        padding: 0;
+        max-width: 100%;
+      }
+      .section-title {
+        margin-top: 1.2rem;
+        margin-bottom: 0.6rem;
+      }
+      .item-badge {
+        background: #F1F5F9;
+        color: #334155;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .resume-wrapper {
+        padding: 1.5rem;
+      }
+      .skills-category {
+        grid-template-columns: 1fr;
+        gap: 0.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Controls Toolbar -->
+  <div class="toolbar">
+    <a href="index.html" class="btn btn-back">
+      <i class="fa-solid fa-arrow-left"></i> Back to Portfolio
+    </a>
+    <div style="display: flex; gap: 0.75rem;">
+      <a href="assets/docs/Manasa_Kulal_Resume.pdf" download="Manasa_Kulal_Resume.pdf" class="btn btn-back">
+        <i class="fa-solid fa-download"></i> Direct Download (.PDF)
+      </a>
+      <button onclick="window.print()" class="btn btn-primary">
+        <i class="fa-solid fa-print"></i> Print / Save as PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- Document Sheet -->
+  <div class="resume-wrapper">
+    <!-- Header -->
+    <header class="header-section">
+      <div class="header-top">
+        <div class="name-title">
+          <h1>Manasa Kulal</h1>
+          <div class="role">Computer Science and Engineering (AI &amp; ML)</div>
+          <div style="color: #64748B; font-size: 0.92rem; margin-top: 0.25rem;">
+            Fourth-Year Engineering Student • Aspiring AI &amp; Software Developer
+          </div>
+        </div>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-item">
+          <i class="fa-solid fa-location-dot"></i>
+          <span>Mangalore, Karnataka, India</span>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-envelope"></i>
+          <a href="mailto:kulalmanasa93@gmail.com">kulalmanasa93@gmail.com</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa-solid fa-phone"></i>
+          <a href="tel:9483649608">+91 94836 49608</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa-brands fa-linkedin"></i>
+          <a href="https://www.linkedin.com/in/manasa-kulal-204542434" target="_blank" rel="noopener">linkedin.com/in/manasa-kulal-204542434</a>
+        </div>
+        <div class="contact-item">
+          <i class="fa-brands fa-github"></i>
+          <a href="https://github.com" target="_blank" rel="noopener">github.com/manasa-kulal <span style="font-size:0.75rem; color:#94A3B8;">(Update with profile)</span></a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Education -->
+    <section>
+      <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Education</h2>
+      <div class="edu-item">
+        <div class="item-header">
+          <div class="item-title">Bachelor of Engineering (B.E.) in Computer Science &amp; Engineering</div>
+          <div class="item-badge">2024 – 2028 (Expected)</div>
+        </div>
+        <div class="item-subtitle">AJ Institute of Engineering and Technology, Mangalore</div>
+        <ul class="item-description">
+          <li><strong>Specialization:</strong> Artificial Intelligence and Machine Learning (AI &amp; ML).</li>
+          <li>Focus on foundational computer science principles, algorithmic problem solving, machine learning paradigms, and database architectures.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Technical Skills -->
+    <section>
+      <h2 class="section-title"><i class="fa-solid fa-code"></i> Technical Skills</h2>
+      <div class="skills-category">
+        <div class="skills-label">Programming Languages</div>
+        <div class="skills-list">Python, C, JavaScript, PHP</div>
+      </div>
+      <div class="skills-category">
+        <div class="skills-label">AI &amp; Machine Learning</div>
+        <div class="skills-list">Artificial Intelligence, Machine Learning, Text Preprocessing, TF-IDF Vectorization, Cosine Similarity</div>
+      </div>
+      <div class="skills-category">
+        <div class="skills-label">Web Technologies</div>
+        <div class="skills-list">HTML5, CSS3, JavaScript, Responsive Web Design, UI/UX Principles</div>
+      </div>
+      <div class="skills-category">
+        <div class="skills-label">Database &amp; Tools</div>
+        <div class="skills-list">DBMS, MySQL, Gradio, XAMPP, Git / GitHub, VS Code</div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section>
+      <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Projects</h2>
+
+      <!-- Project 1 -->
+      <div class="project-item">
+        <div class="item-header">
+          <div class="item-title">Language Translation Tool</div>
+          <div class="item-badge">Python • Artificial Intelligence • NLP</div>
+        </div>
+        <div class="item-subtitle">Python-based AI Text Translation Application</div>
+        <ul class="item-description">
+          <li>Engineered a Python-based language translation utility utilizing AI techniques for multilingual text interpretation.</li>
+          <li>Implemented clean text processing pipelines to translate phrases across multiple languages accurately.</li>
+          <li>Structured code modularly for maintainable integration into downstream machine learning workflows.</li>
+        </ul>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-item">
+        <div class="item-header">
+          <div class="item-title">General FAQ Chatbot</div>
+          <div class="item-badge">Python • TF-IDF • Cosine Similarity • Gradio</div>
+        </div>
+        <div class="item-subtitle">Intelligent Conversational Query Retrieval System</div>
+        <ul class="item-description">
+          <li>Developed an intelligent FAQ chatbot utilizing natural language preprocessing (tokenization, cleaning) and TF-IDF feature extraction.</li>
+          <li>Calculated query relevance using cosine similarity to return the most pertinent response accurately and instantaneously.</li>
+          <li>Integrated a user-friendly, responsive web interface using Gradio for real-time testing and interaction.</li>
+        </ul>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-item">
+        <div class="item-header">
+          <div class="item-title">Blood Management System</div>
+          <div class="item-badge">PHP • MySQL • XAMPP • HTML • CSS • JavaScript</div>
+        </div>
+        <div class="item-subtitle">Web-based Donor &amp; Blood Inventory Coordination Platform</div>
+        <ul class="item-description">
+          <li>Created a full-featured web platform to streamline blood donor registrations, emergency requests, and blood unit availability tracking.</li>
+          <li>Architected relational database tables with MySQL (via XAMPP) to maintain secure, synchronized donor records.</li>
+          <li>Crafted an intuitive, accessible frontend utilizing semantic HTML, CSS, and interactive JavaScript form validations.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Certifications -->
+    <section>
+      <h2 class="section-title"><i class="fa-solid fa-award"></i> Certifications &amp; Training</h2>
+      <div class="cert-item">
+        <div class="cert-title">Infosys Springboard Certification</div>
+        <div class="cert-desc">Successfully completed certified courses in Python programming, Artificial Intelligence &amp; Machine Learning fundamentals, and related modern technologies.</div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section>
+      <h2 class="section-title"><i class="fa-solid fa-language"></i> Spoken Languages</h2>
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <span class="item-badge"><i class="fa-solid fa-check"></i> English (Professional Working)</span>
+        <span class="item-badge"><i class="fa-solid fa-check"></i> Kannada (Native)</span>
+        <span class="item-badge"><i class="fa-solid fa-check"></i> Hindi (Conversational)</span>
+      </div>
+    </section>
+  </div>
+
+</body>
+</html>
